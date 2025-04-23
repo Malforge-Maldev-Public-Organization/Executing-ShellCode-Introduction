@@ -117,4 +117,5 @@ This guide covered how to execute shellcode in C++ and highlighted its stealth a
 ---
 
 Thank you for reading!
+
 — **Malforge Group**
