@@ -84,9 +84,9 @@ int main(void) {
 ```
 
 ## Proof of Concept (PoC)
-To illustrate this technique, we can use a reverse shell payload created with MSFvenom in C format. Follow these steps:
+To illustrate this technique, we can use a reverse shell payload created with **MSFvenom in C format**. Follow these steps:
 
-Generate Shellcode: Use MSFvenom to create a reverse shell payload and format it as a C array.
+Generate Shellcode: Use **MSFvenom** to create a reverse shell payload and format it as a C array.
 
 ![image](https://github.com/user-attachments/assets/85592f72-2ddc-4519-9cc3-08d74ce71fb4)
 
