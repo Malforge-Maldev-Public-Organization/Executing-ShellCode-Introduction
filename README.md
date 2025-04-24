@@ -14,13 +14,13 @@ Shellcode is often used in scenarios where:
 
 ![image](https://github.com/user-attachments/assets/86729f34-8ff9-4a2d-b637-7fb9dbb26312)
 
-## 🧪 The Payload: `calc.exe`
+## The Payload: `calc.exe`
 
 We'll use a shellcode payload that spawns the calculator (`calc.exe`). This is commonly used as a proof-of-concept (PoC) for demonstrating shellcode execution.
 
 ---
 
-## 🧾 Full C++ Code
+## Full C++ Code
 
 ```cpp
 /*
